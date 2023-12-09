@@ -29,3 +29,5 @@ This is a cattle detection app that utilizes the YOLOv7 object detection model a
    ```bash
    streamlit run app.py
 
+## Developed By
+This project is developed by CRL Labs, DoECE, SVNIT under the guidance of Dr. S. N. Shah. It was a project developed for Surat Municipal Corporation, by Aditya Kale, Aniket Rana, Manish Lalwani, Ratnadeep Patra and Chaitanya Rathod.
