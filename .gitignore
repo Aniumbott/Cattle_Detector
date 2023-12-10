@@ -42,11 +42,6 @@ coco/
 coco128/
 VOC/
 
-coco2017labels-segments.zip
-test2017.zip
-train2017.zip
-val2017.zip
-
 # MATLAB GitIgnore -----------------------------------------------------------------------------------------------------
 *.m~
 *.mat
@@ -65,10 +60,9 @@ val2017.zip
 *_saved_model/
 *_web_model/
 *_openvino_model/
+*_paddle_model/
 darknet53.conv.74
 yolov3-tiny.conv.15
-*.ptl
-*.trt
 
 # GitHub Python GitIgnore ----------------------------------------------------------------------------------------------
 # Byte-compiled / optimized / DLL files

@@ -11,7 +11,7 @@ import cv2
 import time
 
 #st.set_page_config(layout = "wide")
-st.set_page_config(page_title = "Yolo V7", page_icon="🤖")
+st.set_page_config(page_title = "Cattle Detection", page_icon="🐮")
 
 st.markdown(
         """
@@ -27,7 +27,6 @@ st.markdown(
 #################### Title #####################################################
  
 st.markdown("<h3 style='text-align: center; color: red; font-family: font of choice, fallback font no1, sans-serif;'>CRL Lab's Cattle Detector</h3>", unsafe_allow_html=True)
- 
 st.markdown('#') # inserts empty space
 st.sidebar.markdown("<hr>", unsafe_allow_html=True)
 st.sidebar.markdown("<p style='text-align: center; color: #868e96; font-size: 12px;'>Developed by CRL Labs, ECED, SVNIT</p>", unsafe_allow_html=True)
@@ -36,7 +35,6 @@ st.sidebar.markdown("<p style='text-align: center; color: #868e96; font-size: 12
 #--------------------------------------------------------------------------------
 
 DEMO_VIDEO = os.path.join('data', 'videos', 'sampleVideo0.mp4')
-DEMO_PIC = os.path.join('data', 'images', 'bus.jpg')
 
 def get_subdirs(b='.'):
     '''
@@ -76,10 +74,8 @@ def main():
                   "refrigerator", "book", "clock", "vase", "scissors", "teddy bear", "hair drier", "toothbrush", "All"]
 
     # Pre-select indices for "person," "cow," and "horse"
-    default_selected_indices = ["person", "horse", "cow"]
-    dict = {"person":0, "horse":17, "cow":19}
-
-    
+    default_selected_indices = ["cow", "horse", "person", "car", "motorcycle"]
+    dict = {"cow":19, "horse":17, "person":0, "car":2, "motorcycle":3}    
 
     # Extract keys and values from the dictionary
     keys = list(dict.keys())
@@ -87,8 +83,6 @@ def main():
 
     classes_index = st.sidebar.multiselect("Select Classes", values,
                                       format_func=lambda x: keys[values.index(x)])
-
- 
     
     isAllinList = 80 in classes_index
     if isAllinList == True:
@@ -104,11 +98,9 @@ def main():
     MIN_SCORE_THRES = st.sidebar.slider('Min Confidence Score Threshold', min_value = 0.0, max_value = 1.0, value = 0.4)
     #################### /Parameters to setup ########################################
     
-    weights = os.path.join("weights", "yolov7.pt")
-
-   
+    weights = os.path.join("weights", "yolov5n.pt")
     
-    if source_index == 1:
+    if source_index == 0:
         
         uploaded_file = st.sidebar.file_uploader("Upload Video", type = ['mp4'])
         
@@ -134,10 +126,10 @@ def main():
     else:
         ######### Select and capture Camera #################
         
-        selectedCam = st.sidebar.selectbox("Select Camera", ("Use WebCam", "Use Other Camera"), index = 0)
+        selectedCam = st.sidebar.selectbox("Select Camera", ("Use WebCam", "Use External Source"), index = 0)
         if selectedCam:
-            if selectedCam == "Use Other Camera":
-                data_source = str(1)
+            if selectedCam == "Use External Source":
+                data_source = st.sidebar.text_input("Enter the source address", "rtsp://")
                 is_valid = True
             else:
                 data_source = str(0)
@@ -176,9 +168,8 @@ def main():
                         save_conf = True,
                     nosave = False, 
                     )
-
-                              
-            if source_index == 1:
+                    
+            if source_index == 0:
                 with st.spinner(text = 'Preparing Video'):
                     for vid in os.listdir(get_detection_folder()):
                         if vid.endswith(".mp4"):
@@ -218,8 +209,6 @@ def main():
                     st.write("Path of Live Feed Saved Video: ", liveFeedvideoFile)    
                     st.write("Path of TXT File: ", os.path.join(get_detection_folder(), 'labels'))    
                     st.balloons()
-    
-
                 
 
 

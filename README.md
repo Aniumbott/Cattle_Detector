@@ -6,14 +6,13 @@ This is a cattle detection app that utilizes the YOLOv7 object detection model a
 
 ## Features
 
-- Object detection using YOLOv7
+- Object detection using YOLOv5n
 - Streamlit-based web application
 - Selectable classes for detection
 - Supports both video files and live camera feed
 - Adjustable confidence score threshold
 - Visual output with bounding boxes and labels
 - Video output saved for further analysis
- 
 
 ## Installation
 
@@ -22,12 +21,13 @@ This is a cattle detection app that utilizes the YOLOv7 object detection model a
    ```bash
    git clone https://github.com/your-username/cattle-detection-app.git
    cd cattle-detection-app
+   ```
+
 2. Install dependencies
    ```bash
-   pip install -r requirements.txt
-3. Run the app
-   ```bash
-   streamlit run app.py
+   python start.py
+   ```
 
 ## Developed By
-This project is developed by CRL Labs, DoECE, SVNIT under the guidance of Dr. S. N. Shah. It was a project developed for Surat Municipal Corporation, by Aditya Kale, Aniket Rana, Manish Lalwani, Ratnadeep Patra and Chaitanya Rathod.
+
+This project is developed by CRL Labs, DoECE, SVNIT under the guidance of Dr. S. N. Shah. It was a project developed for Surat Municipal Corporation, by Aditya Kale, Aniket Rana, Manish Lalwani, Ratnadeep Patra.
