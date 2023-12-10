@@ -1,8 +1,8 @@
-# Cattle Detection App with YOLOv7 and Streamlit
+# Cattle Detection App with YOLOv5 and Streamlit
 
 ## Overview
 
-This is a cattle detection app that utilizes the YOLOv7 object detection model and is built with Streamlit. The app allows users to perform cattle detection on videos or live camera feed, providing a user-friendly interface for configuring the detection parameters.
+This is a cattle detection app that utilizes the YOLOv5 object detection model and is built with Streamlit. The app allows users to perform cattle detection on videos or live camera feed, providing a user-friendly interface for configuring the detection parameters.
 
 ## Features
 
