@@ -12,8 +12,6 @@ def main():
     # Source to venv
     activate_script = os.path.join("venv", "Scripts", "activate")
     subprocess.run(f"cmd /k {activate_script} | pip install -r requirements.txt | streamlit run app.py", shell=True)
-
-
     
 if __name__ == "__main__":
     main()

@@ -74,8 +74,8 @@ def main():
                   "refrigerator", "book", "clock", "vase", "scissors", "teddy bear", "hair drier", "toothbrush", "All"]
 
     # Pre-select indices for "person," "cow," and "horse"
-    default_selected_indices = ["cow", "horse", "person", "car", "motorcycle"]
-    dict = {"cow":19, "horse":17, "person":0, "car":2, "motorcycle":3}    
+    default_selected_indices = ["cow", "dog", "horse", "person", "car", "motorcycle"]
+    dict = {"cow":19, "dog":16, "horse":17, "person":0, "car":2, "motorcycle":3}    
 
     # Extract keys and values from the dictionary
     keys = list(dict.keys())
