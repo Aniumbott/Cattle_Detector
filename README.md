@@ -2,6 +2,8 @@
 
 ## Overview
 
+[![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white)](https://youtu.be/nPIC4n0p_6k)
+
 This is a cattle detection app that utilizes the YOLOv5 object detection model and is built with Streamlit. The app allows users to perform cattle detection on videos or live camera feed, providing a user-friendly interface for configuring the detection parameters.
 
 ## Features
@@ -16,6 +18,8 @@ This is a cattle detection app that utilizes the YOLOv5 object detection model a
 
 ## Installation
 
+Follow the steps below to install and run the app on your local machine. You have to follow the **steps 1-4 only once**. After that, you can directly run the app using step 5.
+
 1. Clone the repository:
 
    ```bash
@@ -23,9 +27,36 @@ This is a cattle detection app that utilizes the YOLOv5 object detection model a
    cd cattle-detection-app
    ```
 
-2. Install dependencies
+2. Create a virtual environment:
+
    ```bash
-   python start.py
+   python3 -m venv env
+   ```
+
+3. Activate the virtual environment:
+
+   - On Windows:
+
+     ```bash
+     .\env\Scripts\activate
+     ```
+
+   - On macOS and Linux:
+
+     ```bash
+     source env/bin/activate
+     ```
+
+4. Install the required packages:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+5. Run the Streamlit app:
+
+   ```bash
+   streamlit run app.py
    ```
 
 ## Developed By
